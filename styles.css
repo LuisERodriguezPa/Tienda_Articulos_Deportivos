@@ -218,6 +218,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -225,9 +226,19 @@ body {
 }
 
 .card img {
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 1/1;
   border-radius: 50%;
   object-fit: cover;
-  object-position: top;
+}
+
+@media (max-width: 600px) {
+  .filters-container {
+    gap: 15px;
+  }
+
+  .card img {
+    max-width: 100px;
+  }
 }
