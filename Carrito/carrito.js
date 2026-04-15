@@ -185,11 +185,11 @@ function cargarCarrito() {
 // Renderizar filtros
 function disenoFiltro(nombre, imagen) {
     return `<div class="card bg-dark-subtle text-black" style="cursor: pointer;">
-  <img src="${imagen}" class="card-img-top" alt="${nombre}">
-  <div class="card-body">
+    <img src="${imagen}" class="card-img-top" alt="${nombre}">
+    <div class="card-body">
     <h5 class="card-title">${nombre.toUpperCase()}</h5>
-  </div>
-</div>`;
+    </div>
+    </div>`;
 }
 
 function renderizarFiltros() {

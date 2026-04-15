@@ -1,5 +1,4 @@
 
-
 /* Banner */
 /* Contenedor principal */
 .galeria {
@@ -92,7 +91,7 @@
 .car {
     background-color: rgb(5, 5, 5);
     border-radius: 8px;
-    width: 20%;
+    width: 30%;
     height: fit-content;
     min-height: 15rem;
     padding: 1rem;
@@ -219,4 +218,18 @@
         flex: 0 0 150px;
         height: 220px;
     }
+
+    .main-content {
+    display: flex;
+    flex-direction: column; /* 🔥 clave */
+    align-items: center;
+    }
+
+    .car {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem; /* separación de los productos */
+    position: static; /* 🔥 importante, quita sticky */
 }
+}
+
