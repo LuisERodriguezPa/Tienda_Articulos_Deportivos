@@ -1,0 +1,211 @@
+*:root{
+    --primary-color: #3498db;
+    --secondary-color: #06853b;
+    --font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: #c6def5;
+}
+
+/* Barra de navegación */
+.navbar {
+    height: 6rem;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 6rem;
+    width: 12rem;
+    margin-right: 1rem;
+}
+
+.logo-name {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--secondary-color)
+}
+
+.nav-car {
+    display: flex;
+    align-items: center;
+}
+
+.fa-solid {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-right: 0.2rem;
+}
+
+.counter-car {
+    font-size: 1.2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    margin: 0 1rem 3rem 0;
+}
+
+/* Contenido principal */
+
+.main-content {
+    display: flex;
+    justify-content:center;
+    padding: 2rem;
+    position: sticky;
+    top: 6rem;
+}
+
+/* Estilo de los productos */
+
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+    padding: 2rem;
+    width: 70%;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 1rem;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: rgba(3, 119, 252, 0.16) 0px 1px 4px, rgb(2, 55, 162) 0px 0px 0px 3px;
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.product-name {
+    font-size: 1.5rem;
+    margin: 1rem 0 0.5rem 0;
+    color: var(--secondary-color);
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 3rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Estilo carrito de compras */
+
+.car {
+    background-color: white;
+    border-radius: 8px;
+    width: 20%;
+    height: fit-content;
+    min-height: 15rem;
+    padding: 1rem;
+    border: solid 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 10rem;
+    box-shadow: rgba(37, 98, 242, 0.25) 0px 30px 60px -12px inset, rgba(1, 3, 69, 0.3) 0px 18px 36px -18px inset;
+}
+
+.car h2 {
+    color: var(--secondary-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.car-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.car-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    border: 1px solid rgba(0,0,0,0.08);
+    list-style: none;
+    font-size: 0.85rem;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.btn-eliminar:hover {
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.car p{
+    font-size: 2rem;
+    color: black;
+    font-weight: bold;
+    text-align:end;
+}
+
+.btn-vaciar {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    width: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-vaciar:hover {
+    background-color: #e81b09;
+}
