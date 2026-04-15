@@ -1,4 +1,4 @@
-import { Listaproductos } from "./products.js";
+import { tiendaDeportiva, renderizarProductos } from "./products.js";
 // Selección de elementos del DOM
 const carritoItemsContenedor = document.querySelector(".car-items");
 const precioTotalElemento = document.querySelector(".total-price span");
@@ -41,7 +41,7 @@ function renderizarFiltros() {
   });
 
   filters.appendChild(divTodos);
-  Listaproductos.forEach((productos) => {
+  tiendaDeportiva.forEach((productos) => {
     const divImg = document.createElement("div");
     divImg.innerHTML = disenoFiltro(productos.categoria, productos.imagen);
     divImg.firstElementChild.addEventListener("click", function () {
@@ -51,68 +51,14 @@ function renderizarFiltros() {
   });
 }
 
-// Renderizar cards
-function renderizarProductos(categoriaSeleccionada = null) {
-  contenedorProductos.innerHTML = "";
+// Event delegation: un solo listener para todos los botones, incluso los creados al filtrar
+contenedorProductos.addEventListener("click", function (event) {
+  const boton = event.target.closest(".add-to-cart-btn");
+  if (!boton) return;
 
-  Listaproductos.forEach((categoria) => {
-    if (
-      categoriaSeleccionada &&
-      categoria.categoria !== categoriaSeleccionada
-    ) {
-      return;
-    }
-
-    categoria.productos.forEach((producto) => {
-      const card = document.createElement("div");
-      card.className = "product-card";
-
-      const image = document.createElement("img");
-      image.className = "product-image";
-
-      const name = document.createElement("h3");
-      name.className = "product-name";
-
-      const price = document.createElement("p");
-      price.className = "product-price";
-
-      const button = document.createElement("button");
-      button.className = "add-to-cart-btn";
-
-      // Dataset único
-      button.dataset.id = `${categoria.categoria}-${producto.id}`;
-      button.dataset.nombre = producto.nombre;
-      button.dataset.precio = producto.precio;
-
-      // Valores
-      image.src = producto.imagen;
-      name.textContent = producto.nombre;
-      price.textContent = "$" + producto.precio.toLocaleString("es-CO");
-      button.textContent = "Agregar";
-
-      // Append
-      card.appendChild(image);
-      card.appendChild(name);
-      card.appendChild(price);
-      card.appendChild(button);
-
-      contenedorProductos.appendChild(card);
-    });
-  });
-}
-
-// Llamada a la función para mostrar los productos
-renderizarProductos();
-const botonesAgregar = document.querySelectorAll(".add-to-cart-btn");
-
-// Funcion para recorrer los datos del producto a mostrar en el carrito
-botonesAgregar.forEach(function (boton) {
-  boton.addEventListener("click", function () {
-    const nombre = boton.dataset.nombre;
-    const precio = Number(boton.dataset.precio);
-
-    agregarAlCarrito(nombre, precio);
-  });
+  const nombre = boton.dataset.nombre;
+  const precio = Number(boton.dataset.precio);
+  agregarAlCarrito(nombre, precio);
 });
 
 // Agragar productos al carrito
