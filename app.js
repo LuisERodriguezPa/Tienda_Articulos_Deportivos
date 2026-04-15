@@ -15,7 +15,7 @@ let totalAcumulado = 0;
 
 // Renderizar filtros
 function disenoFiltro(nombre, imagen) {
-  return `<div class="card" style="cursor: pointer;">
+  return `<div class="card bg-dark-subtle text-black" style="cursor: pointer;">
   <img src ="${imagen}" class="card-img-top" alt="${nombre}">
   <div class="card-body">
     <h5 class="card-title">${nombre.toUpperCase()}</h5>
