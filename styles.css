@@ -236,6 +236,14 @@ body {
   object-fit: cover;
 }
 
+#filters-section {
+    padding-top: 30px;
+}
+
+.titulo-marketing {
+  font-family: "Poppins", sans-serif;
+}
+
 @media (max-width: 600px) {
   .filters-container {
     gap: 15px;
