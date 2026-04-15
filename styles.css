@@ -15,7 +15,6 @@ h1, h2, h3, h4, h5, h6 {
      font-family: "Montserrat", sans-serif;
 }
 
-/* Barra de navegación */
 .navbar {
     height: 6rem;
     background-color: var(--primary-color);
@@ -248,4 +247,58 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-vaciar:hover {
     background-color: #e81b09;
+}
+
+.filters-container {
+    padding-top: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    justify-content: center;
+    align-items: center;
+  text-align: center;
+  border: none !important;
+}
+
+.card img {
+  width: 100%;
+  max-width: 150px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#filters-section {
+    padding-top: 30px;
+}
+
+.titulo-marketing {
+  font-family: "Poppins", sans-serif;
+}
+
+@media (max-width: 600px) {
+  .filters-container {
+    gap: 15px;
+  }
+
+  .card img {
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 400px) {
+  .filters-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-items: center;
+  }
 }

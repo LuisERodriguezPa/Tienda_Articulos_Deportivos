@@ -1,0 +1,235 @@
+
+/* Banner */
+/* Contenedor principal */
+.galeria {
+    margin: 50px auto;
+    display: flex;
+    width: 100%;
+    height: 700px;
+    border: solid #DFFF00;
+}
+
+/* Ítem base */
+.item {
+    flex: 1;
+    transition:
+        flex 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+        filter 0.4s ease,
+        transform 0.6s ease;
+    overflow: hidden;
+    position: relative;
+    margin: .2rem;
+    /*  */
+}
+
+.item:hover {
+    flex: 2.5;
+}
+
+/* Imagen interna */
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.item:hover img {
+    transform: scale(1.05);
+}
+
+/* Atenua items no activos cuando hay hover en la galería */
+.galeria:hover .item:not(:hover) {
+    filter: brightness(0.5) grayscale(100%);
+}
+
+
+/* Texto sobre la imagen */
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+
+.item:hover .description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.description h3 {
+    font-size: 50px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+}
+
+.item:hover .description h3 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contenido principal */
+
+.main-content {
+    display: flex;
+    justify-content:center;
+    padding: 2rem;
+    position: sticky;
+    top: 6rem;
+}
+
+/* Estilo carrito de compras */
+
+.car {
+    background-color: rgb(5, 5, 5);
+    border-radius: 8px;
+    width: 30%;
+    height: fit-content;
+    min-height: 15rem;
+    padding: 1rem;
+    border: solid 1px #DFFF00;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 10rem;
+}
+
+.car h2 {
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.car-items {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.car-items li {
+    color: white;
+    display: grid;
+    grid-template-columns: 2fr 1fr auto;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background-color: #0a0a0a;
+    border: 1px solid #DFFF00;
+    list-style: none;
+    font-size: 0.85rem;
+}
+
+.car-items li div{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.btn-eliminar {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.btn-eliminar:hover {
+    background-color: rgb(253, 252, 252);
+}
+
+.car p{
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align:end;
+}
+
+.total-price{
+    border-top: 1px solid #DFFF00;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.btn-vaciar {
+    display: block;
+    margin: 0 auto;
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    width: 50%;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s;
+}
+
+.btn-vaciar:hover {
+    background-color: #e81b09;
+}
+
+/* Tablet grande (≤1024px) */
+@media (max-width: 1024px) {
+    .galeria {
+        height: 300px;
+    }
+
+    .item {
+        flex: 0 0 200px;
+        height: 300px;
+    }
+}
+
+/* Tablet (≤768px): layout vertical */
+@media (max-width: 768px) {
+    .galeria {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .item {
+        flex: none;
+        height: 200px;
+    }
+}
+
+/* Celular (≤600px) */
+@media (max-width: 600px) {
+    .galeria {
+        width: 80%;
+        margin:0 auto;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .item {
+        flex: 0 0 150px;
+        height: 220px;
+    }
+
+    .main-content {
+    display: flex;
+    flex-direction: column; /* 🔥 clave */
+    align-items: center;
+    }
+
+    .car {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2rem; /* separación de los productos */
+    position: static; /* 🔥 importante, quita sticky */
+}
+}
+
