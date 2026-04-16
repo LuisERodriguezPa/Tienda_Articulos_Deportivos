@@ -303,21 +303,19 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
 }
 
-@media (max-width: 600px) {
-  .filters-container {
-    gap: 15px;
-  }
+@media (max-width: 576px) {
+    .navbar {
+        height: auto;
+    }
+    .navbar-nav {
+        height: auto;
+        align-items: flex-start;
+        padding: 1rem;
+    }
 
-  .card img {
-    max-width: 100px;
-  }
+    .nav-link {
+        width: 100%;
+        padding: 10px 0;
+    }
 }
 
-@media (max-width: 400px) {
-  .filters-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    justify-items: center;
-  }
-}
